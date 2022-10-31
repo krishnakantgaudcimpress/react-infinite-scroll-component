@@ -51,8 +51,8 @@ export default class InfiniteScroll extends Component<Props, State> {
   }
 
   private throttledOnScrollListener: (e: MouseEvent) => void;
-  private _scrollableNode: HTMLElement | undefined | null;
-  private el: HTMLElement | undefined | Window & typeof globalThis;
+  private _scrollableNode: Element | HTMLElement | undefined | null;
+  private el: Element | HTMLElement | undefined | Window & typeof globalThis;
   private _infScroll: HTMLDivElement | undefined;
   private lastScrollTop = 0;
   private actionTriggered = false;
@@ -165,10 +165,11 @@ export default class InfiniteScroll extends Component<Props, State> {
   }
 
   getScrollableTarget = () => {
+    debugger;
     if (this.props.scrollableTarget instanceof HTMLElement)
       return this.props.scrollableTarget;
     if (typeof this.props.scrollableTarget === 'string') {
-      return document.getElementsByClassName(this.props.scrollableTarget);
+      return document.getElementsByClassName(this.props.scrollableTarget)[0];
     }
     if (this.props.scrollableTarget === null) {
       console.warn(`You are trying to pass scrollableTarget but it is null. This might
