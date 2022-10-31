@@ -73,7 +73,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.25.2",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "react-scripts": "^5.0.0"
   },
   "dependencies": {
     "throttle-debounce": "^2.1.0"
